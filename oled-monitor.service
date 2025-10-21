@@ -1,0 +1,14 @@
+[Unit]
+Description=System info to I2C screen
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python /home/orangepi/oled-monitor/oled-monitor.py
+WorkingDirectory=/home/orangepi/oled-monitor
+User=root
+Group=root
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
